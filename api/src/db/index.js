@@ -7,7 +7,7 @@ const createUserModel = require('./user')
 
 module.exports = {
     models: {
-        Pet: createAnimalModel(db),
+        Animal: createAnimalModel(db),
         User: createUserModel(db),
     },
     db,

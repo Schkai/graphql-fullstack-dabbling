@@ -1,12 +1,10 @@
-// Resolvers for Schemas. Must match type definitions
-
 module.exports = {
     Query: {
         animals(_, { input }, { models }) {
             return models.Animal.findMany(input || {})
         },
         animal(_, { id }, { models }) {
-            return models.animal.findOne({ id })
+            return models.Animal.findOne({ id })
         },
         user(_, __, { models }) {
             return models.User.findOne()
@@ -23,14 +21,14 @@ module.exports = {
             return models.User.findOne({ id: animal.user })
         },
         img(animal) {
-            return animal.type === 'Goat'
-                ? 'https://placegoat.net/350/350'
-                : 'http://placekitten.com/350/350'
+            return animal.type === 'DOG'
+                ? 'https://placedog.net/300/300'
+                : 'http://placekitten.com/300/300'
         },
     },
     User: {
-        animal(user, _, { models }) {
-            return models.animal.findMany({ user: user.id })
+        animals(user, _, { models }) {
+            return models.Animal.findMany({ user: user.id })
         },
     },
 }
