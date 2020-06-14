@@ -50,7 +50,7 @@ export default function Animals() {
     })
 
     if (animals.loading) return <Loader />
-    if (animals.error || newAnimal.error) return <p>ERROR</p>
+    if (animals.error || newAnimal.error) return <p>Oooopsie, Error.</p>
 
     const onSubmit = (input) => {
         setModal(false)
@@ -64,15 +64,15 @@ export default function Animals() {
                     id: Math.round(Math.random() * -1000000) + '',
                     type: input.type,
                     name: input.name,
-                    img: 'https://via.placeholder.com/300',
-                    vacinated: true,
+                    img: 'http://placegoat.com/300',
+                    lovely: true,
                 },
             },
         })
     }
 
-    const animalsList = animals.data.animals.map((animal) => (
-        <div className="col-xs-12 col-md-4 col" key={animal.id}>
+    const animalsList = animals.data.Animals.map((animal) => (
+        <div className="col-xs-11 col-md-3 col" key={animal.id}>
             <div className="box">
                 <AnimalBox animal={animal} />
             </div>
@@ -82,7 +82,7 @@ export default function Animals() {
     if (modal) {
         return (
             <div className="row center-xs">
-                <div className="col-xs-8">
+                <div className="col-xs-7">
                     <NewAnimal
                         onSubmit={onSubmit}
                         onCancel={() => setModal(false)}
