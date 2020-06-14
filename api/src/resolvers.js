@@ -21,7 +21,7 @@ module.exports = {
             return models.User.findOne({ id: animal.user })
         },
         img(animal) {
-            return animal.type === 'DOG'
+            return animal.type === 'GOAT'
                 ? 'https://placedog.net/300/300'
                 : 'http://placekitten.com/300/300'
         },

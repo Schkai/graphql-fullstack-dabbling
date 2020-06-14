@@ -3,7 +3,7 @@ const { gql } = require('apollo-server')
 const typeDefs = gql`
     enum AnimalType {
         CAT
-        DOG
+        GOAT
     }
     type User {
         id: ID!
