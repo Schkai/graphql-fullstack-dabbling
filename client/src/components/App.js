@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom'
 import React, { Fragment } from 'react'
 import Header from './Header'
-import Animals from '../pages/Animnals'
+import Animals from '../pages/Animals'
 
 const App = () => (
     <Fragment>
